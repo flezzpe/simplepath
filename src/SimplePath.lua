@@ -268,7 +268,7 @@ function Path:Stop()
 	self._events.Stopped:Fire(self._model)
 end
 
-function Path:Run(target, rotation: boolean)
+function Path:Run(target)
 
 	--Non-humanoid handle case
 	if not target and not self._humanoid and self._target then
@@ -337,6 +337,7 @@ function Path:Run(target, rotation: boolean)
 	--Begin pathfinding
 	if self._humanoid then
 		if self.rotation then
+		   warn('rotate camera')
 		   self.camera.CFrame = CFrame.new(self.camera.CFrame.Position, self._waypoints[self._currentWaypoint].Position)
 		end
 		
