@@ -268,7 +268,7 @@ function Path:Stop()
 	self._events.Stopped:Fire(self._model)
 end
 
-function Path:Run(rotation, current_camera, target)
+function Path:Run(target, rotation, current_camera)
 
 	--Non-humanoid handle case
 	if not target and not self._humanoid and self._target then
