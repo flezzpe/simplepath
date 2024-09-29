@@ -48,11 +48,10 @@ end
 
 --Used to visualize waypoints
 local visualWaypoint = Instance.new("Part")
-visualWaypoint.Size = Vector3.new(0.3, 0.3, 0.3)
+visualWaypoint.Size = Vector3.new(0.15, 0.15, 0.15)
 visualWaypoint.Anchored = true
 visualWaypoint.CanCollide = false
 visualWaypoint.Material = Enum.Material.Neon
-visualWaypoint.Shape = Enum.PartType.Ball
 
 --[[ PRIVATE FUNCTIONS ]]--
 local function declareError(self, errorType)
@@ -68,9 +67,10 @@ local function createVisualWaypoints(waypoints)
 		visualWaypointClone.Position = waypoint.Position
 		visualWaypointClone.Parent = workspace
 		visualWaypointClone.Color =
-			(waypoint == waypoints[#waypoints] and Color3.fromRGB(0, 255, 0))
-			or (waypoint.Action == Enum.PathWaypointAction.Jump and Color3.fromRGB(255, 0, 0))
-			or Color3.fromRGB(255, 139, 0)
+			(waypoint == waypoints[#waypoints] and Color3.fromRGB(67, 205, 67))
+			or (waypoint.Action == Enum.PathWaypointAction.Jump and Color3.fromRGB(196, 77, 77))
+			or Color3.fromRGB(171, 104, 243)
+		
 		table.insert(visualWaypoints, visualWaypointClone)
 	end
 	return visualWaypoints
